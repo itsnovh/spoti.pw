@@ -48,7 +48,7 @@ struct SGLyricsLiveActivity: Widget {
                 .padding(.horizontal, context.state.view == .panel ? 12 : 16)
                 .padding(.vertical, 12)
                 .foregroundStyle(.white)
-                .activityBackgroundTint(Color.black.opacity(0.75))
+                .activityBackgroundTint(.clear)
                 .activitySystemActionForegroundColor(.white)
                 .widgetURL(URL(string: "spotify:"))
         } dynamicIsland: { context in
