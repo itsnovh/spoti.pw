@@ -43,14 +43,18 @@ extension SGLyricsAttributes.Tab {
 struct SGLyricsLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: SGLyricsAttributes.self) { context in
+               if #available(iOS 26, *)      {                                        
             ContentView(state: context.state, upNext: 4)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, context.state.view == .panel ? 12 : 16)
                 .padding(.vertical, 12)
                 .foregroundStyle(.white)
-                .activityBackgroundTint(Color.black.opacity(0.75))
+                .glassEffect(.regular)
+                .activityBackgroundTint(.clear)
                 .activitySystemActionForegroundColor(.white)
-                .widgetURL(URL(string: "spotify:"))
+                .widgetURL(URL(string: "spotify:")) } else {
+                   
+               }
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.bottom) {
